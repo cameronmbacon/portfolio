@@ -2,12 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cameron's Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--<link rel="stylesheet" href="vendor/styles/normalize.css">-->
+    <link rel="stylesheet" href="vendor/icons.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
+    <link rel="icon" type="image/x-icon" href="https://i.imgur.com/7v5ASc8.png">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   </head>
   <body>
@@ -17,19 +19,17 @@
           <img src="http://placehold.it/100" alt="">
         </figure>
         <h1>Cameron Bacon</h1>
-        <ul>
-          <li><a href="#">LinkedIn</a></li>
-          <li><a href="https://github.com/cameronmbacon">GitHub</a></li>
-        </ul>
+        <nav class="main-nav">
+          <div class="icon-menu"></div>
+          <ul>
+            <li class="tab" data-content="projects"><a href="#" class="icon-home"> Home</a></li>
+            <li class="tab" data-content="about"><a href="#" class="icon-user-tie"> About</a></li>
+            <li class="tab" data-content="projects"><a href="#" class="icon-linkedin"> LinkedIn</a></li>
+            <li class="tab" data-content="projects"><a href="#" class="icon-github"> GitHub</a></li>
+          </ul>
+        </nav>
       </hgroup>
     </header>
-    <nav>
-      <ul>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">GitHub</a></li>
-        <li><a href="#">About</a></li>
-      </ul>
-    </nav>
     <main>
       <h3>Projects</h3>
       <section id="projects">
