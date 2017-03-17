@@ -39,6 +39,8 @@ hgroup h1 {
 }
 
 .main-nav li {
+  width: 100%;
+  padding: 0.5em 3em 0.2em 0.5em;
   font-size: 2em;
 }
 
