@@ -1,10 +1,32 @@
 'use strict';
 
-var rawData = [
-  {
-    title: 'textVenture',
-    projectUrl: 'http://carloscadena.github.io/textventure',
-    projectImage: '<img class="project-image" src="http://placehold.it/200" alt="project image">',
-    body: '<p>Lorem ipsum dolor sit amet, sed suspendisse donec. Ullamcorper mus, in hymenaeos semper. Quam mi in, sapien sed. Nibh in consequat, lectus pellentesque at, sed nonummy. Quis diam, felis integer, suscipit lectus. Molestie ex platea, arcu a, lacus in metus.</p>'
-  }
-];
+var projects = [];
+
+function Project (projectObject) {
+  this.title = projectObject.title;
+  this.projectUrl = projectObject.projectUrl;
+  this.projectImage = projectObject.projectImage;
+  this.body = projectObject.body;
+}
+
+Project.prototype.toHtml = function() {
+  var $newProject = $('article.template').clone();
+  $newProject.removeClass('template');
+  console.log(this);
+  $newProject.find('.project-title a').html(this.title);
+  $newProject.find('.project-title a').attr('href', this.projectUrl);
+  $newProject.find('.image-container').html(this.projectImage);
+  $newProject.find('.project-body').html(this.body);
+
+  return $newProject;
+};
+
+rawData.forEach(function(projectObject) {
+  projects.push(new Project(projectObject));
+  console.log(projectObject);
+});
+
+projects.forEach(function(p) {
+  $('#projects').append(p.toHtml());
+  console.log(p);
+});
