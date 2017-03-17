@@ -3,6 +3,14 @@
   float: right;
 }
 
+.icon-menu:hover .main-nav ul li {
+  display: block;
+}
+
+.main-nav ul {
+  display: none;
+}
+
 .template {
   display: none;
 }
