@@ -1,6 +1,5 @@
 * {
   background-color: black;
-  /*border: 1px solid green;*/
   color: aquamarine;
 }
 
@@ -14,4 +13,8 @@ img {
 
 p {
   font-size: 1em;
+}
+
+#projects article {
+  border: 0.1em solid green;
 }
