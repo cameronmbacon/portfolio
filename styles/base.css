@@ -3,3 +3,7 @@
   border: 1px solid green;
   color: aquamarine;
 }
+
+img {
+  max-width: 100%;
+}
