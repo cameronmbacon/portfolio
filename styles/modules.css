@@ -1,14 +1,73 @@
-.icon-menu {
-  font-size: 2em;
-  float: right;
+hgroup {
+  float: left;
 }
 
-.icon-menu:hover .main-nav ul li {
+.headshot-container img {
+  width: 50%;
+  max-width: 100%;
+  margin-left: 23%;
+  border-radius: 100%;
+}
+
+figure {
+  max-width: 100%;
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+hgroup h1 {
+  display: inline;
+  vertical-align: top;
+  font-size: 3em;
+}
+
+.icon-menu {
+  font-size: 2.5em;
+  float: right;
+  clear: both;
+}
+
+.main-nav:hover ul {
   display: block;
 }
 
 .main-nav ul {
   display: none;
+  list-style: none;
+  clear: both;
+}
+
+.main-nav li {
+  font-size: 2em;
+}
+
+main h3 {
+  margin: 0;
+  font-size: 3em;
+  text-align: center;
+  clear: both;
+}
+
+#projects {
+  display: block;
+  text-align: center;
+}
+
+#projects article {
+  margin: 0;
+  padding: 0;
+}
+
+#projects p {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+
+h4.project-title {
+  margin: 1em 0 0 0;
+  font-size: 2.3em;
 }
 
 .template {

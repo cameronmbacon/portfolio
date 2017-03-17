@@ -1,3 +1,9 @@
+.clearfix::after {
+  display: table;
+  content: "";
+  clear: both;
+}
+
 @media only screen and (min-width: 640px) {
 
 }
