@@ -10,23 +10,22 @@ function Project (projectObject) {
 }
 
 Project.prototype.toHtml = function() {
-  var $newProject = $('article.template').clone();
-  $newProject.removeClass('template');
-  console.log(this);
-  $newProject.find('.project-title a').html(this.title);
-  $newProject.find('.project-title a').attr('href', this.projectUrl);
-  $newProject.find('.image-container').html(this.projectImage);
-  $newProject.find('.project-body').html(this.body);
+  var templateRender = Handlebars.compile($('#projects').html());
+  // var $newProject = $('article.template').clone();
+  // $newProject.removeClass('template');
+  // $newProject.find('.project-title a').html(this.title);
+  // $newProject.find('.project-title a').attr('href', this.projectUrl);
+  // $newProject.find('.image-container').html(this.projectImage);
+  // $newProject.find('.project-body').html(this.body);
 
-  return $newProject;
+  return templateRender(this);
 };
 
+//method for creating each new Project object stored in rawData
 rawData.forEach(function(projectObject) {
   projects.push(new Project(projectObject));
-  console.log(projectObject);
 });
 
 projects.forEach(function(p) {
   $('#projects').append(p.toHtml());
-  console.log(p);
 });
