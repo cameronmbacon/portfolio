@@ -10,15 +10,22 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="icon" type="image/x-icon" href="https://i.imgur.com/7v5ASc8.png">
+
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script id="articles-template" type="text/x-handlebars-template" data-category="placeholder-category">
-      <article class="template">
-        <h4 class="project-title"><a href="{{projectUrl}}">{{title}}</a></h4>
+
+    <script id="projects-template" type="text/x-handlebars-template" data-category="placeholder-category">
+      <article data-category="{{category}}">
+        <header>
+          <h4 class="{{title}}">
+            <a href="{{projectUrl}}">{{title}}</a>
+          </h4>
+        </header>
         <figure class="image-container"></figure>
         <section class="project-body">{{{body}}}</section>
       </article>
     </script>
   </head>
+
   <body>
     <header class="clearfix">
       <hgroup>
@@ -65,8 +72,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-    <script type="text/javascript" src="scripts/sourceData.js"></script>
-    <script type="text/javascript" src="scripts/projects.js"></script>
-    <script type="text/javascript" src="scripts/projectView.js"></script>
+    <script src="scripts/sourceData.js"></script>
+    <script src="scripts/project.js"></script>
+    <script src="scripts/projectView.js"></script>
   </body>
 </html>
