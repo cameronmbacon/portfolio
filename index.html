@@ -10,15 +10,20 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="icon" type="image/x-icon" href="https://i.imgur.com/7v5ASc8.png">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script id="articles-template" type="text/x-handlebars-template" data-category="placeholder-category">
-      <article class="template">
-        <h4 class="project-title"><a href="{{projectUrl}}">{{title}}</a></h4>
-        <figure class="image-container"></figure>
+    <!-- Handlebars.js template for projects -->
+    <script id="projects-template" type="text/x-handlebars-template" data-category="placeholder-category">
+      <article data-category="{{category}}">
+        <header>
+          <h4 class="{{title}}">
+            <a href="{{projectUrl}}">{{title}}</a>
+          </h4>
+        </header>
+        <figure class="image-container">{{{projectImage}}}</figure>
         <section class="project-body">{{{body}}}</section>
       </article>
     </script>
   </head>
+
   <body>
     <header class="clearfix">
       <hgroup>
@@ -37,22 +42,13 @@
         </ul>
       </nav>
     </header>
-    <br>
-    <br>
     <main>
-      <h3>Projects</h3>
-      <hr>
-      <section id="projects" class="tab-content">
-        <article class="template">
-          <h4 class="project-title"><a href="">Project Title</a></h4>
-          <figure class="image-container"></figure>
-          <section class="project-body"></section>
-        </article>
-      </section>
+      <!-- New projects get added into this section -->
+      <section id="projects" class="tab-content"></section>
       <br>
       <br>
       <section id="about" class="tab-content">
-        <h3>About Cameron</h3>
+        <h3>Welcome to my Portfolio!</h3>
         <hr>
         <p>Spicy jalapeno bacon ipsum dolor amet bacon swine kielbasa biltong tail pig burgdoggen. Turkey sausage doner alcatra. Jerky hamburger boudin biltong meatball salami t-bone jowl chuck pork belly ball tip porchetta shankle cupim. Tongue pork loin spare ribs ground round, tail corned beef chicken andouille bacon flank short ribs frankfurter burgdoggen. Bresaola tongue strip steak pork chop swine short loin venison ham hock alcatra short ribs sausage ham.</p>
       </section>
@@ -60,13 +56,14 @@
     <br>
     <br>
     <footer>
-      <p>codebacon.com &copy: 2017</p>
+      <p>codebacon.com &copy; 2017</p>
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-    <script type="text/javascript" src="scripts/sourceData.js"></script>
-    <script type="text/javascript" src="scripts/projects.js"></script>
-    <script type="text/javascript" src="scripts/projectView.js"></script>
+
+    <script src="scripts/sourceData.js"></script>
+    <script src="scripts/project.js"></script>
+    <script src="scripts/projectView.js"></script>
   </body>
 </html>
