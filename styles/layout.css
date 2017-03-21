@@ -4,10 +4,21 @@
   clear: both;
 }
 
-footer {
-  text-align: center;
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+hgroup {
+  width: 80%;
 }
 
 @media only screen and (min-width: 640px) {
-
+  hgroup {
+    padding: 0.1em 0.1em 0.1em 2em;
+    float: none;
+  }
 }

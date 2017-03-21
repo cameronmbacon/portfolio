@@ -1,36 +1,6 @@
-hgroup {
-  width: 80%;
-  float: left;
-  clear: right;
-}
-
-hgroup h1 {
-  display: block;
-  text-align: center;
-  margin: 0 auto;
-  vertical-align: top;
-  font-size: 2.5em;
-}
-
-h4 a {
-  font-size: 2em;
-}
-
-h1 {
-  padding-left: 1em;
-}
 .headshot-container img {
-  width: 60%;
-  max-width: 100%;
-  margin-left: 25%;
+  max-width: 15em;
   border-radius: 100%;
-}
-
-figure {
-  max-width: 100%;
-  display: inline;
-  margin: 0;
-  padding: 0;
 }
 
 .icon-menu {
@@ -55,13 +25,6 @@ figure {
   font-size: 2em;
 }
 
-main h3 {
-  margin: 0;
-  font-size: 3em;
-  text-align: center;
-  clear: both;
-}
-
 #projects {
   display: block;
   text-align: center;
@@ -78,26 +41,27 @@ main h3 {
   margin: 0 auto;
 }
 
-h4.project-title {
-  margin: 1em 0 0 0;
-  font-size: 2.3em;
+.project-title {
+  margin: 0;
+  font-size: 2.5em;
 }
 
 .template {
   display: none;
 }
 
-@media only screen and (min-width: 923px) {
+@media only screen and (min-width: 640px) {
   .icon-menu {
     display: none;
   }
 
   .main-nav {
-    padding: .2em .2em .2em 2em;
+    margin: .2em .2em .2em 1em;
   }
 
   .main-nav ul {
     display: block;
+    text-align: left;
   }
 
   .main-nav ul li {
