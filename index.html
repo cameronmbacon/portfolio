@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Cameron's Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="vendor/styles/normalize.css"> -->
+    <link rel="stylesheet" href="vendor/styles/normalize.css">
     <link rel="stylesheet" href="vendor/icons.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
@@ -14,7 +14,7 @@
     <script id="projects-template" type="text/x-handlebars-template" data-category="placeholder-category">
       <article data-category="{{category}}">
         <header>
-          <h4 class="{{title}}">
+          <h4 class="{{title}} project-title">
             <a href="{{projectUrl}}">{{title}}</a>
           </h4>
         </header>
@@ -26,15 +26,14 @@
 
   <body>
     <header class="clearfix">
-      <nav class="main-nav">
-      <hgroup>
+      <hgroup class="pull-left">
         <figure class="headshot-container">
-          <img src="http://placehold.it/100" alt="dev-picture">
+          <img src="https://placebear.com/100/100" alt="dev-picture">
         </figure>
         <h1>Cameron Bacon</h1>
       </hgroup>
-
-        <div class="icon-menu"></div>
+      <nav class="main-nav">
+        <div class="icon-menu pull-right"></div>
         <ul>
           <li class="tab" data-content="projects"><a href="#" class="icon-home"> Home</a></li>
           <li class="tab" data-content="about"><a href="#" class="icon-user-tie"> About</a></li>
