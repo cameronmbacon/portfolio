@@ -2,15 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Cameron's Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Form</title>
     <link rel="stylesheet" href="vendor/styles/normalize.css">
     <link rel="stylesheet" href="styles/icons.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
+    <link rel="stylesheet" href="vendor/styles/railscasts.css">
     <link rel="icon" type="image/x-icon" href="https://i.imgur.com/7v5ASc8.png">
-    
+
     <!-- Handlebars.js template for projects -->
     <script id="project-template" type="text/x-handlebars-template" data-category="placeholder-category">
       <article data-category="{{category}}">
@@ -26,7 +27,6 @@
       </article>
     </script>
   </head>
-
   <body>
     <header class="clearfix">
       <hgroup class="pull-left">
@@ -38,37 +38,50 @@
       <nav class="main-nav">
         <div class="icon-menu pull-right"></div>
         <ul>
-          <li class="tab" data-content="projects"><a href="#" class="icon-home"> Home</a></li>
-          <li class="tab" data-content="about"><a href="#" class="icon-user-tie"> About</a></li>
-          <li class="tab" data-content="projects"><a href="https://www.linkedin.com/in/cameronmbacon/" class="icon-linkedin"> LinkedIn</a></li>
-          <li class="tab" data-content="github"><a href="https://github.com/cameronmbacon" class="icon-github"> GitHub</a></li>
+          <li class="tab" data-content="projects"><a href="#" class="icon-home"> Write</a></li>
+          <li class="tab" data-content="about"><a href="#" class="icon-user-tie"> Preview</a></li>
         </ul>
       </nav>
     </header>
-    <main>
-      <!-- New projects get added into this section -->
-      <section id="projects" class="tab-content"></section>
-      <br>
-      <br>
-      <section id="about" class="tab-content">
-        <h3>Welcome to my Portfolio!</h3>
-        <hr>
-        <p>Spicy jalapeno bacon ipsum dolor amet bacon swine kielbasa biltong tail pig burgdoggen. Turkey sausage doner alcatra. Jerky hamburger boudin biltong meatball salami t-bone jowl chuck pork belly ball tip porchetta shankle cupim. Tongue pork loin spare ribs ground round, tail corned beef chicken andouille bacon flank short ribs frankfurter burgdoggen. Bresaola tongue strip steak pork chop swine short loin venison ham hock alcatra short ribs sausage ham.</p>
+    <main class="clearfix">
+      <section id="write" class="tab-content">
+        <h1>New Project</h1>
+        <form action="#" id="new-form">
+          <label>
+            <input type="text" id="project-title" placeholder="Project title" required>
+          </label>
+          <textarea id="project-body" rows="8" cols="40" required></textarea>
+          <label>
+            <input type="text" id="project-category" placeholder="Category" required>
+          </label>
+          <label>
+            <input type="text" id="project-url" placeholder="Project URL" required>
+          </label>
+          <label>
+            <input type="text" id="project-image-url" placeholder="Category" required>
+          </label>
+        </form>
+      </section>
+      <section id="projects"></section>
+      <section id="project-export">
+        <label id="export-field" for="project-json" class="pull-right">
+          <input type="text" readonly id="project-json">
+          When finalized, copy the above JSON, and paste into sourceData.js
+        </label>
       </section>
     </main>
-    <br>
-    <br>
     <footer>
       <p>codebacon.com &copy; 2017</p>
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="vendor/scripts/handlebars.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script src="vendor/scripts/marked.js"></script>
+    <script src="vendor/scripts/highlight.pack.js"></script>
     <script src="scripts/project.js"></script>
     <script src="scripts/projectView.js"></script>
     <script>
-      Project.fetchAll();
+      projectView.initNewArticlePage();
     </script>
   </body>
 </html>

@@ -1,7 +1,5 @@
 'use strict';
 
-var projects = [];
-
 function Project (projectObject) {
   this.title = projectObject.title;
   this.category = projectObject.category;
@@ -10,16 +8,33 @@ function Project (projectObject) {
   this.body = projectObject.body;
 }
 
+Project.all = [];
+
 Project.prototype.toHtml = function() {
-  var templateRender = Handlebars.compile($('#projects-template').html());
-  return templateRender(this);
+  let template = Handlebars.compile($('#project-template').text());
+  this.body = marked(this.body);
+
+  return template(this);
 };
 
-//method for creating each new Project object stored in rawData
-rawData.forEach(function(projectObject) {
-  projects.push(new Project(projectObject));
-});
+Project.loadAll = function(rawData) {
+  rawData.forEach(function(ele) {
+    Project.all.push(new Project(ele));
+  });
+};
 
-projects.forEach(function(p) {
-  $('#projects').append(p.toHtml());
-});
+Project.fetchAll = function() {
+  if (localStorage.rawData) {
+    Project.loadAll(JSON.parse(localStorage.rawData));
+    projectView.initIndexPage();
+  } else {
+    $.getJSON('data/sourceData.json')
+    .then(function(data) {
+      localStorage.rawData = JSON.stringify(data);
+      Project.loadAll(data);
+      projectView.initIndexPage();
+    }, function(err) {
+      console.error(err);
+    });
+  }
+}
