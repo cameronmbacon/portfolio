@@ -34,7 +34,7 @@ Project.fetchAll = function() {
       Project.loadAll(data);
       projectView.initIndexPage();
     }, function(err) {
-      console.error(err);
+      console.error(err.message);
     });
   }
 }
