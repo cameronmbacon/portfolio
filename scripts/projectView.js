@@ -3,7 +3,7 @@
 const projectView = {};
 
 projectView.handleMainNav = function() {
-  $('.main-nav').on('click', '.tab', function(e) {
+  $('.main-nav').on('click', '.tab', function() {
     $('.tab-content').hide();
     $(`#${$(this).data('content')}`).fadeIn();
   });
@@ -26,11 +26,11 @@ projectView.create = function() {
   $('#projects').empty();
 
   project = new Project({
-    title: $('.project-title').val(),
+    title: $('#project-title').val(),
     category: $('#project-category').val(),
     projectUrl: $('#project-url').val(),
     projectImageUrl: $('#project-image-url').val(),
-    body: $('.project-body').val()
+    body: $('#project-body').val()
   });
 
   $('#projects').append(project.toHtml());

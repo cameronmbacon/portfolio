@@ -1,11 +1,11 @@
 'use strict';
 
-function Project (projectObject) {
-  this.title = projectObject.title;
-  this.category = projectObject.category;
-  this.projectUrl = projectObject.projectUrl;
-  this.projectImage = projectObject.projectImage;
-  this.body = projectObject.body;
+function Project (opts) {
+  this.title = opts.title;
+  this.category = opts.category;
+  this.projectUrl = opts.projectUrl;
+  this.projectImageUrl = opts.projectImageUrl;
+  this.body = opts.body;
 }
 
 Project.all = [];
@@ -20,8 +20,8 @@ Project.prototype.toHtml = function() {
 Project.loadAll = function(rawData) {
   rawData.forEach(function(ele) {
     Project.all.push(new Project(ele));
-  });
-};
+  })
+}
 
 Project.fetchAll = function() {
   if (localStorage.rawData) {
@@ -34,7 +34,7 @@ Project.fetchAll = function() {
       Project.loadAll(data);
       projectView.initIndexPage();
     }, function(err) {
-      console.error(err);
+      console.error(err.message);
     });
   }
 }
