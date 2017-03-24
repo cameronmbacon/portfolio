@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="icon" type="image/x-icon" href="https://i.imgur.com/7v5ASc8.png">
-    
+
     <!-- Handlebars.js template for projects -->
-    <script id="project-template" type="text/x-handlebars-template" data-category="placeholder-category">
+    <script id="project-template" type="text/x-handlebars-template">
       <article data-category="{{category}}">
         <header>
-          <h4 class="{{title}} project-title">
+          <h4 class="project-title">
             <a href="{{projectUrl}}">{{title}}</a>
           </h4>
         </header>
@@ -62,7 +62,7 @@
       <p>codebacon.com &copy; 2017</p>
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="vendor/scripts/jquery-3.2.0.min.js"></script>
     <script src="vendor/scripts/handlebars.js"></script>
     <script src="vendor/scripts/marked.js"></script>
     <script src="scripts/project.js"></script>
