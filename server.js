@@ -16,9 +16,8 @@ app.get('/new', function(request, response) {
   response.sendFile('public/new.html', {root: '.'});
 });
 
-app.listen(PORT, function() {
-  console.log('your app is being served on localhost:6660');
-})
+// Utilized an arrow function in my app.listen() method
+app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));
 
 app.use(function(request, response, next) {
   console.log('YOU WENT THE WRONG WAY!')
