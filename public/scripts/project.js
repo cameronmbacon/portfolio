@@ -1,12 +1,9 @@
 'use strict';
 
 (function(module) {
+  // Refactored my constructor function
   function Project (opts) {
-    this.title = opts.title;
-    this.category = opts.category;
-    this.projectUrl = opts.projectUrl;
-    this.projectImageUrl = opts.projectImageUrl;
-    this.body = opts.body;
+    Object.keys(opts).forEach(e => this[e] = opts[e]);
   }
 
   Project.all = [];
@@ -18,11 +15,12 @@
     return template(this);
   };
 
-  Project.loadAll = function(rawData) {
-    rawData.forEach(function(ele) {
-      Project.all.push(new Project(ele));
-    })
-  }
+  // Rewrote this method by utilizing an array method to create the new Project instances
+  Project.loadAll = rows => {
+    Project.all = rows.map(function(data) {
+      return new Project(data);
+    });
+  };
 
   Project.fetchAll = function() {
     if (localStorage.rawData) {
