@@ -1,5 +1,5 @@
 'use strict';
-
+//TODO: To be honset this is a nit-pick since I need to say something. To go with best practice and to make things easier to find you should consider refactoring the init functions into seperate files. 
 (function(module) {
   const projectView = {};
 
