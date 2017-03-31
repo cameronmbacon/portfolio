@@ -22,7 +22,8 @@
       <nav class="main-nav">
         <div class="icon-menu pull-right"></div>
         <ul>
-          <li class="tab"><a href="index.html" class="icon-home"> Portfolio</a></li>
+          <li class="tab"><a href="index.html" class="icon-home"></a> Portfolio</li>
+          <li class="tab"><a href="admin.html"></a> Stats</li>
           <li class="tab"><a href="new.html">New Poject</a></li>
         </ul>
       </nav>
@@ -39,11 +40,10 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="/vendor/scripts/handlebars.js"></script>
-    <script src="/scripts/project.js"></script>
-    <script src="/scripts/projectView.js"></script>
-    <script>
-      Project.fetchAll(projectView.initAdminPage);
-    </script>
+    <script src="vendor/scripts/marked.js"></script>
+    <script src="vendor/scripts/page.js"></script>
+    <script src="vendor/scripts/handlebars.js"></script>
+    <script src="scripts/models/project.js"></script>
+    <script src="scripts/views/adminView.js"></script>
   </body>
 </html>

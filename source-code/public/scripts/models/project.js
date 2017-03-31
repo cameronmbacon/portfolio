@@ -1,7 +1,6 @@
 'use strict';
 
 (function(module) {
-  // Refactored my constructor function
   function Project(opts) {
     Object.keys(opts).forEach(e => this[e] = opts[e]);
   }
@@ -20,10 +19,7 @@
 
   Project.loadAll = rows => {
     rows.sort((a, b) => (new Date(b.lastUpdated)) - (new Date(a.lastUpdated)));
-
-    Project.all = rows.map(function(data) {
-      return new Project(data);
-    });
+    Project.all = rows.map(ele => new Project(ele));
   };
 
   Project.fetchAll = callback => {
@@ -36,9 +32,16 @@
     )
   };
 
-  // I chained together a .map() and .reduce() call like the one for Kilovolt Blog
   Project.numWordsAll = () => {
-    return Project.all.map(data => data.body.split(' ').length).reduce((acc, val) => acc + val);
+    return Project.all.map(project => project.body.match(/\b\w+/g).length)
+                      .reduce((acc, val) => acc + val);
+  };
+
+  Project.stats = () => {
+    return {
+      numProjects: Project.all.length,
+      numWords: Project.numWordsAll()
+    }
   };
 
   Project.truncateTable = callback => {
@@ -51,7 +54,7 @@
   };
 
   Project.prototype.insertRecord = function(callback) {
-    $.post('/projects', {projectUrl: this.ProjectUrl, projectImageUrl: this.projectImageUrl, body: this.body, category: this.category, lastUpdated: this.lastUpdated, title: this.title})
+    $.post('/projects/insert', {projectUrl: this.ProjectUrl, projectImageUrl: this.projectImageUrl, body: this.body, category: this.category, lastUpdated: this.lastUpdated, title: this.title})
     .then(console.log)
     .then(callback);
   };
@@ -75,8 +78,7 @@
         body: this.body,
         category: this.category,
         lastUpdated: this.lastUpdated,
-        title: this.title,
-        projectUrl_id: this.projectUrl_id
+        title: this.title
       }
     })
     .then(console.log)
@@ -84,4 +86,4 @@
   };
 
   module.Project = Project;
-}(window));
+})(window);

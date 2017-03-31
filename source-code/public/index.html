@@ -21,17 +21,12 @@
         <figure class="image-container">
           <img class="project-image" src="{{projectImageUrl}}">
         </figure>
-        <p>{{lastUpdated}}</p>
+        <p><strong>{{updateStatus}}</strong></p>
         <section class="project-body">{{{body}}}</section>
         <a href="#" class="read-on">Read on &rarr;</a>
       </article>
     </script>
   </head>
-<<<<<<< HEAD:source-code/public/index.html
-=======
-  <!-- Again, nit-picking but you will need to put more content in here, keep in mind this will take some time considering you also need to do the styling. -->
-
->>>>>>> 72dc591c15256e79bfd2a72c3c8284203b286606:public/index.html
   <body>
     <header class="clearfix">
       <hgroup class="pull-left">
@@ -43,10 +38,10 @@
       <nav class="main-nav">
         <div class="icon-menu pull-right"></div>
         <ul>
-          <li class="tab" data-content="projects"><a href="#" class="icon-home"> Home</a></li>
-          <li class="tab" data-content="about"><a href="#" class="icon-user-tie"> About</a></li>
-          <li class="tab" data-content="projects"><a href="https://www.linkedin.com/in/cameronmbacon/" class="icon-linkedin"> LinkedIn</a></li>
-          <li class="tab" data-content="github"><a href="https://github.com/cameronmbacon" class="icon-github"> GitHub</a></li>
+          <li class="tab" data-content="projects"><a href="/" class="icon-home"> Home</a></li>
+          <li class="tab" data-content="about"><a href="/about" class="icon-user-tie"> About</a></li>
+          <li><a href="https://www.linkedin.com/in/cameronmbacon/" target="_blank" class="icon-linkedin"> LinkedIn</a></li>
+          <li><a href="https://github.com/cameronmbacon" target="_blank" class="icon-github"> GitHub</a></li>
         </ul>
       </nav>
     </header>
@@ -56,16 +51,24 @@
           <ul id="filters">
             <li>
               <select id="category-filter">
-                <option value="">-- Filter by Category --</option>
+                <option value="">-- Filter by Categories --</option>
               </select>
             </li>
           </ul>
         </div>
       </section>
       <section id="about" class="tab-content">
-        <h3>Welcome to my Portfolio!</h3>
-        <hr>
-        <p>Spicy jalapeno bacon ipsum dolor amet bacon swine kielbasa biltong tail pig burgdoggen. Turkey sausage doner alcatra. Jerky hamburger boudin biltong meatball salami t-bone jowl chuck pork belly ball tip porchetta shankle cupim. Tongue pork loin spare ribs ground round, tail corned beef chicken andouille bacon flank short ribs frankfurter burgdoggen. Bresaola tongue strip steak pork chop swine short loin venison ham hock alcatra short ribs sausage ham.</p>
+        <header>
+          <h1>Welcome to my Portfolio!</h1>
+        </header>
+        <section>
+          <h3>See all of my GitHub repositories(pending):</h3>
+          <ul>
+            <li>Repo 1</li>
+            <li>Repo 2</li>
+            <li>Repo Man!</li>
+          </ul>
+        </section>
       </section>
     </main>
     <footer>
@@ -75,10 +78,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="vendor/scripts/handlebars.js"></script>
     <script src="vendor/scripts/marked.js"></script>
-    <script src="scripts/project.js"></script>
-    <script src="scripts/projectView.js"></script>
-    <script>
-      Project.fetchAll(projectView.initIndexPage);
-    </script>
+    <script src="vendor/scripts/page.js"></script>
+    <script src="scripts/models/project.js"></script>
+    <script src="scripts/views/projectView.js"></script>
+    <script src="scripts/controllers/projectController.js"></script>
+    <script src="scripts/controllers/aboutController.js"></script>
+    <script src="scripts/controllers/routes.js"></script>
   </body>
 </html>
