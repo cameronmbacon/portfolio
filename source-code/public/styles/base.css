@@ -1,0 +1,54 @@
+body {
+  color: #313131;
+  font-size: 100%;
+  line-height: 1.3em;
+}
+
+header, main {
+  width: 90%;
+  margin: auto;
+}
+
+img {
+  width: 70%;
+}
+
+footer {
+  text-align: center;
+}
+
+/*====================TEXT STYLES====================*/
+h1 {
+  font-size: 3em;
+  line-height: 0.8em;
+}
+
+h2 {
+  font-size: 2.6em;
+  line-height: 0.8em;
+}
+
+h3 {
+  font-size: 2.15em;
+  line-height: 0.8em;
+}
+
+h4 {
+  font-size: 1.7em;
+  line-height: 0.8em;
+}
+
+p {
+  font-size: 1em;
+  text-align: justify;
+}
+
+/*==============LINK STYLES==============*/
+a, a:link, a:active {
+  text-decoration: none;
+  color: teal;
+}
+
+a:hover, a:focus {
+  color: green;
+}
