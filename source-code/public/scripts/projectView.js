@@ -34,6 +34,16 @@
     $('.main-nav .tab:first').click();
   };
 
+  projectView.setTeasers = function() {
+    $('.project-body *:nth-of-type(n+2)').hide();
+
+    $('projects').on('click', 'a.read-on', function(e) {
+      e.preventDefault();
+      $(this).parent.find('*').fadeIn();
+      $(this).hide();
+    });
+  };
+
   projectView.initNewProjectPage = function() {
     $('.tab-content').show();
     $('export-field').hide();
@@ -50,9 +60,9 @@
 
     project = new Project({
       title: $('#project-title').val(),
-      category: $('#project-category').val(),
       projectUrl: $('#project-url').val(),
       projectImageUrl: $('#project-image-url').val(),
+      category: $('#project-category').val(),
       body: $('#project-body').val(),
       lastUpdated: $('#project-updated:checked').length ? new Date() : null
     });
@@ -69,6 +79,7 @@
     projectView.populateFilters();
     projectView.handleCategoryFilter();
     projectView.handleMainNav();
+    projectView.setTeasers();
   };
 
   projectView.initAdminPage = function() {

@@ -28,10 +28,12 @@
 
   Project.fetchAll = callback => {
     $.get('/projects')
-    .then(results => {
-      Project.loadAll(results);
-      callback();
-    })
+    .then(
+      results => {
+        Project.loadAll(results);
+        callback();
+      }
+    )
   };
 
   // I chained together a .map() and .reduce() call like the one for Kilovolt Blog
@@ -49,7 +51,7 @@
   };
 
   Project.prototype.insertRecord = function(callback) {
-    $.post('/projects', {title: this.title, category: this.category, projectUrl: this.ProjectUrl, projectImageUrl: this.projectImageUrl, body: this.body, lastUpdated: this.lastUpdated})
+    $.post('/projects', {projectUrl: this.ProjectUrl, projectImageUrl: this.projectImageUrl, body: this.body, category: this.category, lastUpdated: this.lastUpdated, title: this.title})
     .then(console.log)
     .then(callback);
   };
@@ -68,12 +70,13 @@
       url: `/projects/${this.project_id}`,
       method: 'PUT',
       data: {
-        title: this.title,
-        category: this.category,
         projectUrl: this.projectUrl,
         projectImageUrl: this.projectImageUrl,
         body: this.body,
-        lastUpdated: this.lastUpdated
+        category: this.category,
+        lastUpdated: this.lastUpdated,
+        title: this.title,
+        projectUrl_id: this.projectUrl_id
       }
     })
     .then(console.log)
