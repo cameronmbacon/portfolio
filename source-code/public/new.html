@@ -23,7 +23,7 @@
         <figure class="image-container">
           <img class="project-image" src="{{projectImageUrl}}">
         </figure>
-        <p>{{lastUpdated}}</p>
+        <p>{{updateStatus}}</p>
         <section class="project-body">{{{body}}}</section>
         <a href="#" class="read-on">Read on &rarr;</a>
       </article>
@@ -41,7 +41,7 @@
         <div class="icon-menu pull-right"></div>
         <ul>
           <li class="tab" data-content="write"><a href="#" class="icon-home"> Write</a></li>
-          <li class="tab" data-content="projects"><a href="#" class="icon-user-tie"> Preview</a></li>
+          <li class="tab" data-content="projects"><a href="index.html" class="icon-home"> Preview</a></li>
         </ul>
       </nav>
     </header>
@@ -83,10 +83,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script src="vendor/scripts/marked.js"></script>
     <script src="vendor/scripts/highlight.pack.js"></script>
-    <script src="scripts/project.js"></script>
-    <script src="scripts/projectView.js"></script>
-    <script>
-      projectView.initNewProjectPage();
-    </script>
+    <script src="scripts/models/project.js"></script>
+    <script src="scripts/views/newProject.js"></script>
   </body>
 </html>
