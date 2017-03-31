@@ -1,7 +1,7 @@
 [
   {
     "title": "textVenture",
-    "category": "game",
+    "category": "JavaScript",
     "projectUrl": "http://carloscadena.github.io/textventure",
     "projectImageUrl": "https://placebear.com/200/200",
     "lastUpdated": "2017-03-03",
@@ -9,7 +9,7 @@
   },
   {
     "title": "BusMall",
-    "category": "business",
+    "category": "HTML",
     "projectUrl": "http://cameronmbacon.github.io/bus-mall",
     "projectImageUrl": "https://placebear.com/200/200",
     "lastUpdated": "2017-02-23",
@@ -17,7 +17,7 @@
   },
   {
     "title": "Salmon Cookies",
-    "category": "business",
+    "category": "CSS",
     "projectUrl": "http://cameronmbacon.github.io/salmon-cookies",
     "projectImageUrl": "https://placebear.com/200/200",
     "lastUpdated": "2017-02-16",

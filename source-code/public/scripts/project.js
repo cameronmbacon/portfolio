@@ -26,20 +26,58 @@
     });
   };
 
-  Project.fetchAll = function() {
-    if (localStorage.rawData) {
-      Project.loadAll(JSON.parse(localStorage.rawData));
-      projectView.initIndexPage();
-    } else {
-      $.getJSON('data/sourceData.json')
-      .then(function(data) {
-        localStorage.rawData = JSON.stringify(data);
-        Project.loadAll(data);
-        projectView.initIndexPage();
-      }, function(err) {
-        console.error(err.message);
-      });
-    }
+  Project.fetchAll = callback => {
+    $.get('/projects')
+    .then(results => {
+      Project.loadAll(results);
+      callback();
+    })
+  };
+
+  // I chained together a .map() and .reduce() call like the one for Kilovolt Blog
+  Project.numWordsAll = () => {
+    return Project.all.map(data => data.body.split(' ').length).reduce((acc, val) => acc + val);
+  };
+
+  Project.truncateTable = callback => {
+    $.ajax({
+      url: '/projects',
+      method: 'DELETE',
+    })
+    .then(console.log)
+    .then(callback);
+  };
+
+  Project.prototype.insertRecord = function(callback) {
+    $.post('/projects', {title: this.title, category: this.category, projectUrl: this.ProjectUrl, projectImageUrl: this.projectImageUrl, body: this.body, lastUpdated: this.lastUpdated})
+    .then(console.log)
+    .then(callback);
+  };
+
+  Project.prototype.deleteRecord = function(callback) {
+    $.ajax({
+      url: `/projects/${this.project_id}`,
+      method: 'DELETE'
+    })
+    .then(console.log)
+    .then(callback);
+  };
+
+  Project.prototype.updateRecord = function(callback) {
+    $.ajax({
+      url: `/projects/${this.project_id}`,
+      method: 'PUT',
+      data: {
+        title: this.title,
+        category: this.category,
+        projectUrl: this.projectUrl,
+        projectImageUrl: this.projectImageUrl,
+        body: this.body,
+        lastUpdated: this.lastUpdated
+      }
+    })
+    .then(console.log)
+    .then(callback);
   };
 
   module.Project = Project;

@@ -21,7 +21,9 @@
         <figure class="image-container">
           <img class="project-image" src="{{projectImageUrl}}">
         </figure>
+        <p>{{lastUpdated}}</p>
         <section class="project-body">{{{body}}}</section>
+        <a href="#" class="read-on">Read on &rarr;</a>
       </article>
     </script>
   </head>
@@ -71,7 +73,7 @@
     <script src="scripts/project.js"></script>
     <script src="scripts/projectView.js"></script>
     <script>
-      Project.fetchAll();
+      Project.fetchAll(projectView.initIndexPage);
     </script>
   </body>
 </html>
