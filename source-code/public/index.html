@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="icon" type="image/x-icon" href="https://i.imgur.com/7v5ASc8.png">
 
-    <!-- Handlebars.js template for projects -->
     <script id="project-template" type="text/x-handlebars-template">
       <article data-category="{{category}}">
         <header>
@@ -22,11 +21,12 @@
         <figure class="image-container">
           <img class="project-image" src="{{projectImageUrl}}">
         </figure>
+        <p>{{lastUpdated}}</p>
         <section class="project-body">{{{body}}}</section>
+        <a href="#" class="read-on">Read on &rarr;</a>
       </article>
     </script>
   </head>
-
   <body>
     <header class="clearfix">
       <hgroup class="pull-left">
@@ -46,29 +46,34 @@
       </nav>
     </header>
     <main>
-      <!-- New projects get added into this section -->
-      <section id="projects" class="tab-content"></section>
-      <br>
-      <br>
+      <section id="projects" class="tab-content">
+        <div>
+          <ul id="filters">
+            <li>
+              <select id="category-filter">
+                <option value="">-- Filter by Category --</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+      </section>
       <section id="about" class="tab-content">
         <h3>Welcome to my Portfolio!</h3>
         <hr>
         <p>Spicy jalapeno bacon ipsum dolor amet bacon swine kielbasa biltong tail pig burgdoggen. Turkey sausage doner alcatra. Jerky hamburger boudin biltong meatball salami t-bone jowl chuck pork belly ball tip porchetta shankle cupim. Tongue pork loin spare ribs ground round, tail corned beef chicken andouille bacon flank short ribs frankfurter burgdoggen. Bresaola tongue strip steak pork chop swine short loin venison ham hock alcatra short ribs sausage ham.</p>
       </section>
     </main>
-    <br>
-    <br>
     <footer>
       <p>codebacon.com &copy; 2017</p>
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="vendor/scripts/handlebars.js"></script>
     <script src="vendor/scripts/marked.js"></script>
     <script src="scripts/project.js"></script>
     <script src="scripts/projectView.js"></script>
     <script>
-      Project.fetchAll();
+      Project.fetchAll(projectView.initIndexPage);
     </script>
   </body>
 </html>

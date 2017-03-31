@@ -23,7 +23,9 @@
         <figure class="image-container">
           <img class="project-image" src="{{projectImageUrl}}">
         </figure>
+        <p>{{lastUpdated}}</p>
         <section class="project-body">{{{body}}}</section>
+        <a href="#" class="read-on">Read on &rarr;</a>
       </article>
     </script>
   </head>
@@ -59,6 +61,9 @@
           </label>
           <label>
             <input type="text" id="project-image-url" placeholder="Project Image URL" required>
+          </label>
+          <label>
+            <input type="checkbox" id="project-updated"> Updated
           </label>
         </form>
       </section>
