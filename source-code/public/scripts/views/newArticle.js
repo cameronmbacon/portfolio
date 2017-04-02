@@ -25,7 +25,7 @@
     $('#projects').append(formProject.toHtml('#project-template'));
     $('pre code').each((i, block) => hljs.highlightBlock(block));
     $('#export-field').show();
-    $('#project-json').val(`${JSON.stringify(project)},`);
+    $('#project-json').val(JSON.stringify(formProject) + ',');
   };
 
   newProject.initNewProjectPage();

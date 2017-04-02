@@ -3,10 +3,11 @@
 (function(module) {
   const aboutController = {};
 
-  aboutController.init = function() {
-    $('.tab-content').hide();
-    $('#about').fadeIn('fast');
-  }
+  aboutController.index = () => {
+    $('#about').show().siblings().hide();
+    
+    repos.requestRepos(repoView.index);
+  };
 
   module.aboutController = aboutController;
 })(window);
