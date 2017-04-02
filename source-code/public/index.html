@@ -26,6 +26,20 @@
         <a href="#" class="read-on">Read on &rarr;</a>
       </article>
     </script>
+    <script id="repo-template" type="text/x-handlebars-template">
+      <li>
+        <a href="{{html_url}}" target="_blank">
+          <h3>{{name}}</h3>
+        </a>
+        <p>Description: {{description}}</p>
+        <p>Language: {{language}}</p>
+        <p>Created: {{created_at}}</p>
+        <p>Last Updated: {{updated_at}}</p>
+        {{#if watchers_count}}
+          <p>{{watchers_count}} watching this repo</p>
+        {{/if}}
+      </li>
+    </script>
   </head>
   <body>
     <header class="clearfix">
@@ -76,13 +90,16 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="vendor/scripts/handlebars.js"></script>
-    <script src="vendor/scripts/marked.js"></script>
-    <script src="vendor/scripts/page.js"></script>
-    <script src="scripts/models/project.js"></script>
-    <script src="scripts/views/projectView.js"></script>
-    <script src="scripts/controllers/projectController.js"></script>
-    <script src="scripts/controllers/aboutController.js"></script>
-    <script src="scripts/controllers/routes.js"></script>
+    <script src="/vendor/scripts/handlebars.js"></script>
+    <script src="/vendor/scripts/marked.js"></script>
+    <script src="/vendor/scripts/page.js"></script>
+    <script src="/githubToken.js"></script>
+    <script src="/scripts/models/project.js"></script>
+    <script src="/scripts/views/projectView.js"></script>
+    <script src="/scripts/controllers/projectController.js"></script>
+    <script src="/scripts/controllers/aboutController.js"></script>
+    <script src="/scripts/models/repo.js"></script>
+    <script src="/scripts/views/repoView.js"></script>
+    <script src="/scripts/controllers/routes.js"></script>
   </body>
 </html>

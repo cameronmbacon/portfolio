@@ -1,7 +1,5 @@
 'use strict';
 
-page('/', projectController.init);
-
-page('/about', aboutController.init);
-
+page('/', projectController.index);
+page('/about', aboutController.index);
 page();
